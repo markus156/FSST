@@ -8,8 +8,7 @@
 
 Serial pc(USBTX,USBRX);
 
-int main()
-{
+int main(){
 	int val =0;
 	pc.baud(115200);
 	

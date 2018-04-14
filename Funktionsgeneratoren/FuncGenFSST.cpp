@@ -3,24 +3,20 @@
 //-------------------------------------------------------------------------------------------------
 //Rampengenerator
 //-------------------------------------------------------------------------------------------------
-SignedRampGen::SignedRampGen()
-{
+SignedRampGen::SignedRampGen(){
   val = 0;
   SetPointsPerPeriod(10); // Default ist 10Pts/Periode
 }
 
-void SignedRampGen::SetPointsPerPeriod(float aPoints)
-{
+void SignedRampGen::SetPointsPerPeriod(float aPoints){
   _inc = 2.0/aPoints;
 }
 
-void SignedRampGen::SetFrequ(float aFrequ)
-{
+void SignedRampGen::SetFrequ(float aFrequ){
   SetPointsPerPeriod(1.0/aFrequ);
 }
 
-void SignedRampGen::CalcOneStep()
-{
+void SignedRampGen::CalcOneStep(){
   val = val + _inc;
   if( val>1.0 )
     val = -1 + (val - 1.0); 
@@ -29,77 +25,64 @@ void SignedRampGen::CalcOneStep()
 //-------------------------------------------------------------------------------------------------
 //Dreieck Generator
 //-------------------------------------------------------------------------------------------------
-Triangle::Triangle()
-{
+Triangle::Triangle(){
 	val = _phase = 0;
 	SetPointsPerPeriod(10);
 	_status= 1;
 }
-void Triangle::SetPointsPerPeriod(float aPoints)
-{
+void Triangle::SetPointsPerPeriod(float aPoints){
 	_inc=2.0/aPoints;
 }
 
-void Triangle::SetFrequ(float aFrequ)
-{
+void Triangle::SetFrequ(float aFrequ){
 	SetPointsPerPeriod(1.0/aFrequ);
 }
 
-void Triangle::CalcOneStep()
-{
+void Triangle::CalcOneStep(){
 	_phase = _phase+_inc;
 
-	if(_phase > 1.0)
-	{
-			_phase = -1+(_phase-1.0);
+	if(_phase > 1.0){
+			
+		_phase = -1+(_phase-1.0);
 		
-		if(_status == 1)
-		{
+		if(_status == 1){
 			_status = 2;
 		}
-		else if ( _status == 2)
-		{
+		else if ( _status == 2){
 			_status = 1;
 		}
 	}
 	
-	if(_status == 1)
-	{
+	if(_status == 1){
 		val = _phase;
 	}
-	else
-	{
+	else{
 		val = -_phase;
 	}
 }
 //-------------------------------------------------------------------------------------------------
 //Rechteck Generator
 //-------------------------------------------------------------------------------------------------
-Rectangle::Rectangle()
-{
+Rectangle::Rectangle(){
 	val = _phase = 0;
 	SetPointsPerPeriod(10);
 	_thrs= 0;
 }
-void Rectangle::SetPointsPerPeriod(float aPoints)
-{
+void Rectangle::SetPointsPerPeriod(float aPoints){
 	_inc=2.0/aPoints;
 }
 
-void Rectangle::SetFrequ(float aFrequ)
-{
+void Rectangle::SetFrequ(float aFrequ){
 	SetPointsPerPeriod(1.0/aFrequ);
 }
-void Rectangle::SetPulsWidth(float aPercent)
-{
+void Rectangle::SetPulsWidth(float aPercent){
   _thrs = 1.0-aPercent;
 }
-void Rectangle::CalcOneStep()
-{
+void Rectangle::CalcOneStep(){
 	_phase = _phase+_inc;
 
 	if(_phase > 1.0){
-			_phase = -1+(_phase-1.0);
+		_phase = -1+(_phase-1.0);
 		
 	
 	}
@@ -114,8 +97,7 @@ void Rectangle::CalcOneStep()
 //-------------------------------------------------------------------------------------------------
 //Sinus Generator (mit Datatable, ohne complexe Rechnung)
 //-------------------------------------------------------------------------------------------------
-Sinus::Sinus()
-{
+Sinus::Sinus(){
 	val = 0;
 	SetPointsPerPeriod(20);
 	
@@ -130,19 +112,16 @@ Sinus::Sinus()
 	table[8]= -0.85;
 	table[9]= -0.6;
 }
-void Sinus::SetPointsPerPeriod(float aPoints)
-{
+void Sinus::SetPointsPerPeriod(float aPoints){
 	_N= 10;
 	_inc= _N/aPoints;
 }
 
-void Sinus::SetFrequ(float aFrequ)
-{
+void Sinus::SetFrequ(float aFrequ){
 	SetPointsPerPeriod(1.0/aFrequ);
 }
 
-void Sinus::CalcOneStep()
-{
+void Sinus::CalcOneStep(){
 	_pos += _inc;
 	if(_pos >= _N){
 		_pos -= _N;
@@ -159,15 +138,13 @@ void Sinus::CalcOneStep()
 	val = table[i]+((table[ii]-table[i])*frac);
 }
 
-int Sinus::Floor(float aFloor)
-{
+int Sinus::Floor(float aFloor){
 	return aFloor;
 }
 //-------------------------------------------------------------------------------------------------
 //Cos Generator (mit Datatable, ohne complexe Rechnung)
 //-------------------------------------------------------------------------------------------------
-Cos::Cos()
-{
+Cos::Cos(){
 	val = 0;
 	SetPointsPerPeriod(10);
 	
@@ -183,19 +160,16 @@ Cos::Cos()
 	table[9]= 1;
 	
 }
-void Cos::SetPointsPerPeriod(float aPoints)
-{
+void Cos::SetPointsPerPeriod(float aPoints){
 	_N= 10;
 	_inc= _N/aPoints;
 }
 
-void Cos::SetFrequ(float aFrequ)
-{
+void Cos::SetFrequ(float aFrequ){
 	SetPointsPerPeriod(1.0/aFrequ);
 }
 
-void Cos::CalcOneStep()
-{
+void Cos::CalcOneStep(){
 	_pos += _inc;
 	if(_pos >= _N){
 		_pos -= _N;
@@ -211,7 +185,6 @@ void Cos::CalcOneStep()
 	
 	val = table[i]+((table[ii]-table[i])*frac);
 }
-int Cos::Floor(float aFloor)
-{
+int Cos::Floor(float aFloor){
 	return aFloor;
 }
