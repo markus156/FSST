@@ -13,6 +13,8 @@ Dieses Repository beinhällt alle maturarelevanten Codes
 ##### Zu beachten
 Bitte beim Benutzen des Codes darauf achten, die Imports anzupassen und richtig in Kail v4/v5 einzubinden.
 
+Die Pfade im Kailprojekt müssen richtig gesetzt sein, um ein Projekt compelieren zu können.
+
 Alle Visual Studio Projekte sollten kompelierbar sein, eventuell müssen kleinere Einstellungen wie der COM-Port bei den Programm Visualisierungsprogrammen und die Baudrate bei allen Kommunikationsprojekten abgeändert werden, die benötigten Baudraten sind in den Sourcecodes der MBED Programme nachzuaschauen.
 
 ##### Contributing
