@@ -84,8 +84,6 @@ void Rectangle::CalcOneStep(){
 
     if(_phase > 1.0){
         _phase = -1+(_phase-1.0);
-        
-    
     }
     
     if(_phase > _thrs){
