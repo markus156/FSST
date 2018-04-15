@@ -58,9 +58,9 @@ int main(void){
             ExecSignalChain(); 
             if( ua0.acqON ) {
                 ua0.WriteSV(1, v1);
-				ua0.WriteSV(2,tp.y);
-							
-				//ua0.WriteSV(2, v2);
+                ua0.WriteSV(2,tp.y);
+                            
+                //ua0.WriteSV(2, v2);
                 //ua0.WriteSV(2, tp.y);
             }
         }
@@ -69,10 +69,10 @@ int main(void){
 }
 
 void ExecSignalChain(){
-	
-	fg3.CalcOneStep();
-	v1= fg3.val*amp1;
-	tp.calcOneStep(v1);
+    
+    fg3.CalcOneStep();
+    v1= fg3.val*amp1;
+    tp.calcOneStep(v1);
 }
 
 void CommandHandler(){
