@@ -35,7 +35,7 @@ B#  0    0    0    0;
 int btn;
 
 if( btn & 1 )  B#xxxx & B#0001
-  printf("Bit0 ist gesetzt"
+  printf("Bit0 ist gesetzt");
 
 if( btn & 2 ) B#xxxx & B#0010
   printf("Bit1 ist gesetzt");
