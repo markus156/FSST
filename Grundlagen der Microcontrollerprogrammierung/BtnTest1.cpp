@@ -42,67 +42,67 @@ a = (a << 1) | 1; // 00111
 
 int main(){
   lb = 0; // alle leds aus
-	
-	while(1){
+    
+    while(1){
     LeftRunLight();
   }
 }
 
 void LeftRunLight(){
-	lb = 1;
-	for(int i=1; i<=12; i++){
-		lb = lb << 1;
-		wait_ms(300);
-	}
+    lb = 1;
+    for(int i=1; i<=12; i++){
+        lb = lb << 1;
+        wait_ms(300);
+    }
 }
 
 void LeftSnake(){
-	lb = 1;
-	for(int i=1; i<=12; i++){ // 12x 1en nachschieben
-		lb = (lb << 1) | 1;
-		wait_ms(300);
-	}
+    lb = 1;
+    for(int i=1; i<=12; i++){ // 12x 1en nachschieben
+        lb = (lb << 1) | 1;
+        wait_ms(300);
+    }
   for(int i=1; i<=12; i++){ // 11x 0en nachschieben
-		lb = lb << 1;
-		wait_ms(300);
-	}
+        lb = lb << 1;
+        wait_ms(300);
+    }
 }
 
 
 
 void BtnBlinker3(){
-	if( (btn & 1) && (btn & 2) )
-		lb = 3;
-	else if( (btn & 4) || (btn & 8) )
-		lb = 12;
-	else
-		lb = 0;
+    if( (btn & 1) && (btn & 2) )
+        lb = 3;
+    else if( (btn & 4) || (btn & 8) )
+        lb = 12;
+    else
+        lb = 0;
 }
 
 void BtnBlinker1(){
-	if( btn & 1 ) // Sw1
-		lb = 4;     // D18
-	if( btn & 2 ) // Sw2
-		lb = 8;     // D17
-	if( btn & 4 ) // Sw3
-		lb = 16;    // D16
-	// ......
-	wait_ms(300);
-	lb = 0;
-	wait_ms(300);
+    if( btn & 1 ) // Sw1
+        lb = 4;     // D18
+    if( btn & 2 ) // Sw2
+        lb = 8;     // D17
+    if( btn & 4 ) // Sw3
+        lb = 16;    // D16
+    // ......
+    wait_ms(300);
+    lb = 0;
+    wait_ms(300);
 }
 
 // Wenn mehrere Btns gedrück sind sollen auch mehrere Leds blinken 
 void BtnBlinker2(){
-	lb = 0;
-	if( btn & 1 ) // Sw1
-		lb = lb | 4;  // Bit2 durch dazuverodern setzen
-	if( btn & 2 ) // Sw2
-		lb = lb | 8;  // Bit3 durch dazuverodern setzen
-	if( btn & 4 ) // Sw3
-		lb = lb | 16;    // D16
-	// ......
-	wait_ms(300);
-	lb = 0;
-	wait_ms(300);
+    lb = 0;
+    if( btn & 1 ) // Sw1
+        lb = lb | 4;  // Bit2 durch dazuverodern setzen
+    if( btn & 2 ) // Sw2
+        lb = lb | 8;  // Bit3 durch dazuverodern setzen
+    if( btn & 4 ) // Sw3
+        lb = lb | 16;    // D16
+    // ......
+    wait_ms(300);
+    lb = 0;
+    wait_ms(300);
 }

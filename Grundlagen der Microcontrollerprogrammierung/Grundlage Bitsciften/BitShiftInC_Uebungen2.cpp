@@ -101,26 +101,26 @@ BusOut leds(LED1,LED2,LED3,LED4);
 
 // wenn sw2 gedrückt ist sollen LED1 u.LED3 leuchten
 if( btn & 2 ) // B#0010
-	leds = 5; // B#0101
+    leds = 5; // B#0101
 
 // wenn sw1 und sw2 gedrückt sind sollen LED3 u. LED4 leuchten
 if( (btn & 1) && (btn & 2) )
-	leds = 12; // B#1100
+    leds = 12; // B#1100
 
 // wenn sw3 oder sw4 gedrückt sind sollen LED1 u. LED2 leuchten
 if( (btn & 4) || (btn & 8) )
-	leds = 3; // B#0011
+    leds = 3; // B#0011
 
 // Schreiben Sie für einen 12-Bit LED-Bar ein 4er Lauflicht nach links
 int i;
 leds = 0;
 for(i=1; i<=4; i++) { // 4x 1en nachschieben
-	leds = (leds << 1) | 1;
-	wait_ms(200);
+    leds = (leds << 1) | 1;
+    wait_ms(200);
 }
 for(i=1; i<=12; i++) { // 12x 0en nachschieben
-	leds = leds << 1;
-	wait_ms(200);
+    leds = leds << 1;
+    wait_ms(200);
 }
 
 
