@@ -1,6 +1,9 @@
 #include "mbed.h"
 #include "Serial_HL.h"
 #include "FuncGenFSST.h"
+
+//Wird nur verwendet, wenn man TP1Ord.H eingebunden hat
+//Ansonsten rauslöschen
 #include "Tp1Ord.h"
 
 // 2 Generatoren mit switch umschalten
@@ -26,10 +29,12 @@ Sinus fg3;
 Cos cosinus;
 
 
-//Cos fg4;
 float amp1 = 1.0;
 float v1; // Ausgangswert mit amp1 multipliziert
-//float v2;
+
+
+//Wird nur verwendet, wenn man TP1Ord.H eingebunden hat
+//Ansonsten rauslöschen
 Tp1Ord tp;
 
 int swt=2; // 1..v1 auf fg1 geschaltet    2..v1 auf fg2 geschaltet
@@ -58,10 +63,10 @@ int main(void){
             ExecSignalChain(); 
             if( ua0.acqON ) {
                 ua0.WriteSV(1, v1);
+
+                //Wird nur verwendet, wenn man TP1Ord.H eingebunden hat
+                //Ansonsten rauslöschen
                 ua0.WriteSV(2,tp.y);
-                            
-                //ua0.WriteSV(2, v2);
-                //ua0.WriteSV(2, tp.y);
             }
         }
     }
@@ -72,6 +77,9 @@ void ExecSignalChain(){
     
     fg3.CalcOneStep();
     v1= fg3.val*amp1;
+
+    //Wird nur verwendet, wenn man TP1Ord.H eingebunden hat
+    //Ansonsten rauslöschen
     tp.calcOneStep(v1);
 }
 
@@ -86,7 +94,7 @@ void CommandHandler(){
 
     if( cmd==2 ) { // Frequenz
         float frequ = ua0.ReadF();
-        cosinus.SetFrequ(frequ);
+        fg3.SetFrequ(frequ);
         ua0.SvMessage("Set Frequ");
     }
 
@@ -104,6 +112,8 @@ void CommandHandler(){
 
     // Grenzfrequenz umstellen umschalten
     if( cmd==5 ) { 
+        //Wird nur verwendet, wenn man TP1Ord.H eingebunden hat
+        //Ansonsten rauslöschen
         tp.SetAlpha(ua0.ReadI16());
         ua0.SvMessage("Set Alpha");
     }
