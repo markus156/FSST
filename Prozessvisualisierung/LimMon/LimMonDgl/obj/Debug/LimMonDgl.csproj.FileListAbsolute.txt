@@ -1,0 +1,19 @@
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\bin\Debug\LimMonDgl.exe.config
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\bin\Debug\LimMonDgl.exe
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\bin\Debug\LimMonDgl.pdb
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\obj\Debug\LimMonDgl.Form1.resources
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\obj\Debug\LimMonDgl.Properties.Resources.resources
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\obj\Debug\LimMonDgl.csproj.GenerateResource.Cache
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\obj\Debug\LimMonDgl.exe
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\obj\Debug\LimMonDgl.pdb
+S:\Dateien\Dokumente\Visual Studio 2015\Projects\LimMonDgl\bin\Debug\ZedHLRel.dll
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\bin\Debug\LimMonDgl.exe.config
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\obj\Debug\LimMonDgl.exe
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\obj\Debug\LimMonDgl.pdb
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\bin\Debug\LimMonDgl.exe
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\bin\Debug\LimMonDgl.pdb
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\bin\Debug\ZedHLRel.dll
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\obj\Debug\LimMonDgl.csprojResolveAssemblyReference.cache
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\obj\Debug\LimMonDgl.Form1.resources
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\obj\Debug\LimMonDgl.Properties.Resources.resources
+S:\Dateien\Desktop\SWDEV\5BHEL-FSST-M0\LimMonDgl\obj\Debug\LimMonDgl.csproj.GenerateResource.Cache
