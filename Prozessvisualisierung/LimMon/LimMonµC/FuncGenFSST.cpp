@@ -51,7 +51,8 @@ void RectGen::CalcOneStep()
   _phase = _phase + _inc;
   if( _phase>1.0 )
     _phase = -1 + (_phase - 1.0); 
-	if( _phase>_thrs )
+  
+  if( _phase>_thrs )
     val = 1.0;
   else
     val = -1.0;
