@@ -26,6 +26,7 @@ class SignedRampGen {
 //------------------
 //Dreieck Generator
 //------------------
+class Triangle {
     public:
         float val; // momentaner Ausgangswert
   private:
